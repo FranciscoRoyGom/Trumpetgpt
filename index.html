@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TrumpetGPT - Entrenamiento Vocal con IA</title>
+  <title>TrumpetGPT – Entrenamiento Vocal IA</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f1f1f1;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f9;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -18,13 +18,31 @@
     header {
       background: #1e3a8a;
       color: white;
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
+      position: relative;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    header img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 50px;
+    }
+
+    h1 {
+      margin: 0.5rem 0;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav select {
+      padding: 0.4rem;
+      margin: 0.2rem;
+      font-size: 1rem;
     }
 
     main {
@@ -41,7 +59,27 @@
       height: 500px;
       border: none;
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-top: 2rem;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .materials, .contact, .logo {
+      margin-top: 2rem;
+    }
+
+    .contact button {
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      background: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     footer {
@@ -53,33 +91,86 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.4rem;
-      }
-
-      iframe {
-        height: 400px;
-      }
+      header h1 { font-size: 1.2rem; }
+      iframe { height: 400px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🎺 TrumpetGPT – Entrenamiento Vocal con IA</h1>
-    <p>Una herramienta complementaria para estudiantes de conservatorio</p>
+    <!-- Logo (puedes subir tu imagen como logo.png al repo más tarde) -->
+    <img src="logo.png" alt="Logo del conservatorio" onerror="this.style.display='none'">
+    <h1 id="title">🎺 TrumpetGPT – Entrenamiento Vocal</h1>
+    <nav>
+      <select id="language-selector">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+      <select id="level-selector">
+        <option value="beginner">Nivel: Principiante</option>
+        <option value="intermediate">Nivel: Intermedio</option>
+        <option value="advanced">Nivel: Avanzado</option>
+      </select>
+    </nav>
   </header>
 
   <main>
     <iframe 
       src="https://www.yeschat.ai/i/gpts-9t557atENGw-Voice-Master"
-      title="Tutor Vocal AI">
+      title="Asistente Vocal IA">
     </iframe>
+
+    <!-- Materiales descargables -->
+    <section class="materials">
+      <h2 id="materials-title">🎵 Material Adicional</h2>
+      <ul>
+        <li><a href="#">🎼 Partitura 1 (próximamente)</a></li>
+        <li><a href="#">🔊 Audio de práctica (próximamente)</a></li>
+        <li><a href="#">📄 Ejercicio en PDF (próximamente)</a></li>
+      </ul>
+    </section>
+
+    <!-- Botón de contacto -->
+    <section class="contact">
+      <h2 id="contact-title">📞 Contacto</h2>
+      <button onclick="alert('Función disponible próximamente')">
+        Contactar vía WhatsApp o Email
+      </button>
+    </section>
+
+    <!-- Espacio para logo adicional -->
+    <section class="logo">
+      <h2>🎓 Conservatorio / Marca Personal</h2>
+      <p>Puedes subir tu logo como <code>logo.png</code> y aparecerá arriba automáticamente.</p>
+    </section>
   </main>
 
   <footer>
     Creado por Francisco Roy – Profesor de Trompeta | Conservatorio 🎼
   </footer>
 
+  <script>
+    // Cambio de idioma dinámico (básico)
+    const translations = {
+      es: {
+        title: '🎺 TrumpetGPT – Entrenamiento Vocal',
+        materials: '🎵 Material Adicional',
+        contact: '📞 Contacto'
+      },
+      en: {
+        title: '🎺 TrumpetGPT – Vocal Training',
+        materials: '🎵 Additional Materials',
+        contact: '📞 Contact'
+      }
+    };
+
+    document.getElementById('language-selector').addEventListener('change', (e) => {
+      const lang = e.target.value;
+      document.getElementById('title').textContent = translations[lang].title;
+      document.getElementById('materials-title').textContent = translations[lang].materials;
+      document.getElementById('contact-title').textContent = translations[lang].contact;
+    });
+  </script>
 </body>
 </html>
