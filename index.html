@@ -2,35 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutor de Entrenamiento Vocal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrumpetGPT - Entrenamiento Vocal con IA</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1 {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f1f1f1;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 500px;
       border: none;
-      margin-top: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: #e0e7ff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      iframe {
+        height: 400px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🎺 Tutor de Entrenamiento Vocal con IA</h1>
-  <p>Bienvenido a tu espacio de práctica guiada. Interactúa con el asistente a continuación:</p>
 
-  <iframe 
-    src="https://www.yeschat.ai/i/gpts-9t557atENGw-Voice-Master" 
-    width="800" 
-    height="500" 
-    style="max-width: 100%;">
-  </iframe>
+  <header>
+    <h1>🎺 TrumpetGPT – Entrenamiento Vocal con IA</h1>
+    <p>Una herramienta complementaria para estudiantes de conservatorio</p>
+  </header>
 
-  <p style="margin-top: 2rem;">Profesor: [Tu Nombre] – Conservatorio</p>
+  <main>
+    <iframe 
+      src="https://www.yeschat.ai/i/gpts-9t557atENGw-Voice-Master"
+      title="Tutor Vocal AI">
+    </iframe>
+  </main>
+
+  <footer>
+    Creado por Francisco Roy – Profesor de Trompeta | Conservatorio 🎼
+  </footer>
+
 </body>
 </html>
